@@ -4,6 +4,7 @@
 using namespace std;
 
 int Score::playerScore = 0;
+string Score::playerName = "";
 
 string Score::ReturnScoreString()
 {

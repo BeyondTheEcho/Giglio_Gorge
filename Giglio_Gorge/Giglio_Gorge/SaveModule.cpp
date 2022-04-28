@@ -7,13 +7,14 @@
 
 using namespace std;
 
-/*
+
 SaveSystem::SaveSystem()
 {
-	FILE* file;
-	if (file = fopen("./SaveGameData/SaveData.dat", "r"))
+	ifstream MyFile("./SaveGameData/SaveData.dat");
+
+	if (MyFile.is_open())
 	{
-		fclose(file);
+		MyFile.close();
 	}
 	else
 	{
@@ -21,7 +22,6 @@ SaveSystem::SaveSystem()
 		SaveGameData.close();
 	}
 }
-*/
 
 
 string SaveSystem::BuildFile()
