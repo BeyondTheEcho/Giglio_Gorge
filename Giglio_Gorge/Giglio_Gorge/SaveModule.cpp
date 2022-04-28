@@ -7,6 +7,7 @@
 
 using namespace std;
 
+/*
 SaveSystem::SaveSystem()
 {
 	FILE* file;
@@ -20,6 +21,8 @@ SaveSystem::SaveSystem()
 		SaveGameData.close();
 	}
 }
+*/
+
 
 string SaveSystem::BuildFile()
 {

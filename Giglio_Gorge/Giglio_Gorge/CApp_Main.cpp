@@ -27,7 +27,7 @@ int CApp::OnExecute()
 		OnLoop();
 
 		OnRender();
-	
+		SDL_Delay(5);
 	}
 
 	OnCleanup();

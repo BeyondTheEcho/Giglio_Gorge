@@ -2,7 +2,7 @@
 
 bool CApp::OnInit()
 {
-	window = SDL_CreateWindow("Crossing The Road And River",
+	window = SDL_CreateWindow("Giglios Gorge",
 		SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED,
 		WINDOW_WIDTH, WINDOW_HEIGHT,
@@ -23,13 +23,18 @@ bool CApp::OnInit()
 	}
 
 
-	if (bg.LoadSprite("BG.bmp", renderer, bg.texture) < 0)
+	if (bg.LoadSprite("Assets\\BG.bmp", renderer, bg.texture) < 0)
 	{
 		return -1;
 	}
 
 
-	if (player.LoadSprite("monke.bmp", renderer, player.texture) < 0)
+	if (player.LoadSprite("Assets\\Dino.bmp", renderer, player.texture) < 0)
+	{
+		return -1;
+	}
+
+	if (player.LoadSprite("Assets\\Rock.bmp", renderer, rock.texture) < 0)
 	{
 		return -1;
 	}

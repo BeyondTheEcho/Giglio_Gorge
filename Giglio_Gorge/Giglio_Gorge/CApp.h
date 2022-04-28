@@ -6,12 +6,13 @@
 #include "SDL_ttf.h"
 
 #include "Player.h"
+#include "Rock.h"
 #include "Background.h"
 
 using namespace std;
 
-#define WINDOW_WIDTH	1280
-#define WINDOW_HEIGHT	720
+#define WINDOW_WIDTH	800
+#define WINDOW_HEIGHT	500
 
 #define NUM_SPRITES		1
 
@@ -35,11 +36,12 @@ public:
 
 private:
 	bool done = false;
-
-	//SDL_Rect backgroundBlack = { 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT };
 	
 	Player player;
+
+	Rock rock;
 	
+	int gravity = 1;
 
 	SDL_Window* window;
 	SDL_Renderer* renderer;
