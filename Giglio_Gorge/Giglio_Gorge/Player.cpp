@@ -35,7 +35,11 @@ void Player::MoveRight()
 
 void Player::MoveUp()
 {
-	playerPosition.y -= yUnits * 3;
+	if (playerPosition.y == 500 - 100 - yUnits)
+	{
+		playerPosition.y -= yUnits * 3;
+	}
+	
 	CheckBounds();
 }
 

@@ -2,6 +2,7 @@
 
 void CApp::OnCleanup()
 {
+
 	SDL_DestroyWindow(window);
 	window = NULL;
 

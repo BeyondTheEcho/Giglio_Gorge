@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "SDL.h"
 
 using namespace std;
 
@@ -16,9 +17,12 @@ public:
 	string baseStringThree = "You have leaped over X tall buildings";
 	string baseStringFour = "You have conquered X rocks";
 
+
+	//Only use these
 	void AddScore();
-	void SetPlayerName(string name);
 	string ReturnScoreString();
+	
+	void SetPlayerName(string name);
 	string ReturnPlayerName();
 	string ConstructScoreString();
 	string FormatString(string s, char c, int score);

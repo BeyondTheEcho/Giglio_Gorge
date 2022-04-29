@@ -17,6 +17,7 @@ int CApp::OnExecute()
 	}
 
 	SDL_Event event;
+	Controller* xboxController = new Controller;
 
 	while (!done)
 	{
@@ -24,11 +25,15 @@ int CApp::OnExecute()
 		{
 			OnEvent(&event);
 		}
+
+		xboxController->Update();
+
 		OnLoop();
 
 		OnRender();
-		SDL_Delay(5);
+		SDL_Delay(3);
 	}
 
+	//delete xboxController;
 	OnCleanup();
 }
