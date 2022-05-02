@@ -3,41 +3,42 @@
 
 void Player::CheckBounds() 
 {
-	if (playerPosition.x < 0)
+	if (position.x < 0)
 	{
-		playerPosition.x = 0;
+		position.x = 0;
 	}
-	if (playerPosition.x > WINDOW_WIDTH - 1)
+	if (position.x > WINDOW_WIDTH - 1)
 	{
-		playerPosition.x = WINDOW_WIDTH - xUnits;
+		position.x = WINDOW_WIDTH - xUnits;
 	}
-	if (playerPosition.y < 0)
+	if (position.y < 0)
 	{
-		playerPosition.y = 0;
+		position.y = 0;
 	}
-	if (playerPosition.y > WINDOW_HEIGHT - 1)
+	if (position.y > WINDOW_HEIGHT - 1)
 	{
-		playerPosition.y = WINDOW_HEIGHT - yUnits;
+		position.y = WINDOW_HEIGHT - yUnits;
 	}
 }
 
 void Player::MoveLeft()
 {
-	playerPosition.x -= xUnits;
+	position.x -= xUnits;
 	CheckBounds();
 }
 
 void Player::MoveRight()
 {
-	playerPosition.x += xUnits;
+	position.x += xUnits;
 	CheckBounds();
 }
 
+//the only one we will be using. It's a jump!!
 void Player::MoveUp()
 {
-	if (playerPosition.y == 500 - 100 - yUnits)
+	if (position.y == 500 - 100 - yUnits)
 	{
-		playerPosition.y -= yUnits * 3;
+		position.y -= yUnits * 4;
 	}
 	
 	CheckBounds();
@@ -45,7 +46,7 @@ void Player::MoveUp()
 
 void Player::MoveDown()
 {
-	playerPosition.y += yUnits;
+	position.y += yUnits;
 	CheckBounds();
 }
 

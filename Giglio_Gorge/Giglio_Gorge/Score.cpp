@@ -6,6 +6,8 @@ using namespace std;
 int Score::playerScore = 0;
 string Score::playerName = "";
 
+//stelios did all this
+
 string Score::ReturnScoreString()
 {
 	return ConstructScoreString();

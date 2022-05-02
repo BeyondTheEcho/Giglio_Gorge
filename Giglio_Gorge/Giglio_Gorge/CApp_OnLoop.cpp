@@ -2,24 +2,32 @@
 
 void CApp::OnLoop()
 {
+	//moves rock towards pplayer
+	rock.position.x -= rock.velocity;
 
-	rock.playerPosition.x -= rock.velocity;
-
-	if (player.playerPosition.y < 500 - 100 - player.yUnits)
+	//check to see if jumping
+	if (jumped)
 	{
-		player.playerPosition.y += gravity;
+		player.MoveUp();
 	}
 
-	if (rock.playerPosition.x < - 100)
+	//gravity
+	if (player.position.y < 500 - 100 - player.yUnits)
 	{
-		rock.playerPosition.x = WINDOW_WIDTH + 100;
+		player.position.y += gravity;
+	}
+
+	//recycles rock
+	if (rock.position.x < - 100)
+	{
+		rock.position.x = WINDOW_WIDTH + 100;
 		score.AddScore();
 		score.ReturnScoreString();
 	}
 
-	if (CollidedWithObstacle(player.playerPosition, rock.playerPosition))
+	//checks if player collided with rock
+	if (CollidedWithObstacle(player.position, rock.position))
 	{
-
 		done = true;
 	}
 

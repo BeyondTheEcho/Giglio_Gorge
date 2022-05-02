@@ -13,6 +13,7 @@
 #include "Windows.h"
 #include "Xinput.h"
 #include "Controller.h"
+#include "SaveModule.h"
 
 using namespace std;
 
@@ -25,6 +26,8 @@ class CApp
 {
 public:
 
+	//void MenuScreen();
+
 	bool OnInit();
 	void OnEvent(SDL_Event* event);
 	
@@ -32,6 +35,7 @@ public:
 	bool CollidedWithObstacle(SDL_Rect A, SDL_Rect B);
 	
 	void OnRender();
+	void DisplayGameStats(int x, int y, const char* formattedString, int number);
 
 	void OnCleanup();
 
@@ -49,12 +53,21 @@ private:
 	Rock rock;
 
 	Score score;
+	SaveSystem save;
 	
+	bool jumped = false;
 	int gravity = 1;
 
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 	
 	Background bg;
+
+	TTF_Font* font;
+	SDL_Color fontColor;
+	char message[100];
+	SDL_Surface* messageSurface;
+	SDL_Texture* messageTexture;
+	SDL_Rect messageRect;
 
 };

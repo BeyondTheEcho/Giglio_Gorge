@@ -21,7 +21,7 @@ public:
 	void MoveUp();
 	void MoveDown();
 
-	SDL_Rect playerPosition = { 0, 500 - 100 - yUnits , xUnits, yUnits };
+	SDL_Rect position = { 0, 500 - 100 - yUnits , xUnits, yUnits };
 	
 	
 

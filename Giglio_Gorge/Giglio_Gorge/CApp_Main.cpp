@@ -11,29 +11,54 @@ int main(int argc, char* argv[])
 
 int CApp::OnExecute()
 {
+	//initializes TTF fonts
+	TTF_Init();
+
+	//initializes everything else
 	if (OnInit() == false)
 	{
 		return -1;
 	}
+	
+	string initials;
+	cout << "What are you initials?" << endl;
+	cin >> initials;
+	score.SetPlayerName(initials);
 
+
+	//SDL Events
 	SDL_Event event;
 	Controller* xboxController = new Controller;
 
+
+	/*while (!done) 
+	{
+		MenuScreen();
+	}*/
+
+	done = false;
+
+	//main game loop
 	while (!done)
 	{
+		//SDL EVENTS
 		while (SDL_PollEvent(&event))
 		{
 			OnEvent(&event);
 		}
 
-		xboxController->Update();
+		jumped = xboxController->Update();
 
+		//loop
 		OnLoop();
 
+		//renders
 		OnRender();
 		SDL_Delay(3);
 	}
 
-	//delete xboxController;
+	save.SavePlayerData();
+
+	delete xboxController;
 	OnCleanup();
 }

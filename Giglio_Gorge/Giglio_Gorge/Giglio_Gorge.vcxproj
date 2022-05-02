@@ -152,7 +152,9 @@
     <ClCompile Include="CApp_OnLoop.cpp" />
     <ClCompile Include="CApp_OnRender.cpp" />
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="CApp_MenuScreen.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Rock.cpp" />
     <ClCompile Include="SaveModule.cpp" />
     <ClCompile Include="Score.cpp" />
   </ItemGroup>
@@ -161,6 +163,7 @@
     <ClInclude Include="CApp.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Rock.h" />
     <ClInclude Include="SaveModule.h" />
     <ClInclude Include="Score.h" />
   </ItemGroup>

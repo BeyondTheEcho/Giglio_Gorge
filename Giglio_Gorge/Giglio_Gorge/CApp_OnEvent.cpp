@@ -1,5 +1,6 @@
 #include "CApp.h"
 
+//reads the up key and jumps
 void CApp::OnEvent(SDL_Event* event)
 {
 	switch (event->type)

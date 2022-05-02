@@ -19,7 +19,7 @@ public:
 
 	bool IsAPressed();
 
-	void Update();
+	bool Update();
 	
 	
 	
